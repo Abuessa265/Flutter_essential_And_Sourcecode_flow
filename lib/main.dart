@@ -2,7 +2,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'home.dart';
+import 'package:flutter_sourch_code_flow/home.dart';//its package import
+//import 'home.dart'; //its path import
+
+
 main() {
   runApp(MyApp());
 }

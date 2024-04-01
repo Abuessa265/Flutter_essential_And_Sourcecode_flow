@@ -1,5 +1,10 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_sourch_code_flow/settings.dart';
+
 class Profile extends StatelessWidget {
-  const Profile({super.key});
+  const Profile({super.key,required this.userName});
+
+  final String userName;
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +17,10 @@ class Profile extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(userName),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pop(context,'returned with string');
                 },
                 child: Text('Back to home')),
             ElevatedButton(

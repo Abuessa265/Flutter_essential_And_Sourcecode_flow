@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_sourch_code_flow/profile.dart';
+import 'package:flutter_sourch_code_flow/settings.dart';
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -35,8 +39,10 @@ class Home extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Profile(),
-                        ));
+                          builder: (context) => Profile(userName: 'Abu essa',),
+                        )).then((value){
+                          print(value);
+                    });
                   },
                   child: Text('Go to Profile')),
             )

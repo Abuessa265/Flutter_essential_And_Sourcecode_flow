@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_sourch_code_flow/home.dart';
+
 class Setting extends StatelessWidget {
   const Setting({super.key});
 
@@ -14,9 +17,14 @@ class Setting extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {}, child: Text('Back to previous page')),
-            ElevatedButton(onPressed: () {
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>Home()),(route)=>false);
-            }, child: Text('Go to Home'))
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                      (route) => false);
+                },
+                child: Text('Go to Home'))
           ],
         ),
       ),
