@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
         title: const Text('Home'),
       ),
       body: Center(
-        //wrap এটি row এর মোত কাজ করে কিন্তু row সেম লাইন এ জাইগা শেষ হলে নিচের লাইন থেকে স্টার্ট করতে পারে না কিন্তু wrap এটি পারে
+        //wrap এটি row এর মতো কাজ করে কিন্তু row সেম লাইন এ জাইগা শেষ হলে নিচের লাইন থেকে স্টার্ট করতে পারে না কিন্তু wrap এটি পারে
         child: Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.start,
