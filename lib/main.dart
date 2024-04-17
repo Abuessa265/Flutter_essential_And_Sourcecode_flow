@@ -37,29 +37,46 @@ class Home extends StatelessWidget {
         centerTitle: true,
         title: const Text('Home'),
       ),
-      body: Center(
-        //wrap এটি row এর মতো কাজ করে কিন্তু row সেম লাইন এ জাইগা শেষ হলে নিচের লাইন থেকে স্টার্ট করতে পারে না কিন্তু wrap এটি পারে
-        child: Wrap(
-          alignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.start,
-          spacing: 10,
-          children: [
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-            Text(MediaQuery.orientationOf(context).toString()),
-          ],
-        ),
+
+      //wrap এটি row এর মতো কাজ করে কিন্তু row সেম লাইন এ জাইগা শেষ হলে নিচের লাইন থেকে স্টার্ট করতে পারে না কিন্তু wrap এটি পারে
+      // body: Center(
+      //   child: Wrap(
+      //     alignment: WrapAlignment.center,
+      //     crossAxisAlignment: WrapCrossAlignment.start,
+      //     spacing: 10,
+      //     children: [
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //       Text(MediaQuery.orientationOf(context).toString()),
+      //     ],
+      //   ),
+      // ),
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth < 400) {
+            return const Center(child: Text('Mobile'));
+          } else if (constraints.maxWidth < 600) {
+            return const Center(child: Text('Tablet'));
+          } else if (constraints.maxWidth < 1200) {
+            return const Center(
+              child: Text('Laptop'),
+            );
+          }
+          return const Center(
+            child: Text('Desktop'),
+          );
+        },
       ),
     );
   }
