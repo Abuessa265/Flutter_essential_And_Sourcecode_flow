@@ -1,9 +1,16 @@
-//wrap , LayoutBuilder ,OrientationBuilder
+//Sizer | ResponsiveBuilder | Device Preview
 
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const MyApp(), // Wrap your app
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,6 +19,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       home: const Home(),
       theme: ThemeData(),
     );
@@ -31,48 +41,6 @@ class Home extends StatelessWidget {
       ),
       body: Column(
         children: [
-          /*
-          Flexible(
-            //tight দিলে height কাজ করবে না জদি container ৩ টা থাকে তাহলে সমান ৩ ভাগে ভাগ করবে
-            fit: FlexFit.tight,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-            ),
-          ),
-          Expanded(
-            //Expanded দিলে আর flexible দেওয়া লাগে না কারন Expanded এর মধ্যে flexible এর FlexFit.tight করা থাকে
-            flex: 2,
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.yellow,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              width: 100,
-              height: 100,
-              color: Colors.purple,
-            ),
-          )
-           */
-
-          /*
-          SizedBox(
-            width: MediaQuery.sizeOf(context).width,
-            height: 500,
-            child: FractionallySizedBox(
-              heightFactor: 0.9,
-              widthFactor: 0.5,
-              child: Container(
-                color: Colors.purple,
-              ),
-            ),
-
-           */
-
           AspectRatio(
             aspectRatio: 16 / 5,
             child: Container(color: Colors.red),
