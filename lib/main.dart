@@ -41,10 +41,44 @@ class Home extends StatelessWidget {
       ),
       body: Column(
         children: [
-          AspectRatio(
-            aspectRatio: 16 / 5,
-            child: Container(color: Colors.red),
-          )
+          Flexible(
+            fit: FlexFit.tight,
+            flex: 2,
+            child: Container(
+              width: 100,
+              color: Colors.red,
+            ),
+          ),
+          Flexible(
+            fit: FlexFit.tight,
+            flex: 1,
+            child: Container(
+              width: 100,
+              color: Colors.blue,
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              width: 100,
+              color: Colors.yellow,
+            ),
+          ),
+          SizedBox(
+            width: MediaQuery.sizeOf(context).width,
+            height: 400,
+            child: FractionallySizedBox(
+              heightFactor: 0.8,
+              widthFactor: 0.6,
+              child: Container(
+                color: Colors.cyan,
+              ),
+            ),
+          ),
+          // AspectRatio(
+          //   aspectRatio: 16 / 5,
+          //   child: Container(color: Colors.red),
+          // )
         ],
       ),
     );
