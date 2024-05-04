@@ -1,5 +1,5 @@
 // Scaffold | Column | Row | Dialog | bottom sheet | Snackbar
-
+//mainAxisAlignment crossAxisAlignment
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,29 +28,36 @@ class Home extends StatelessWidget {
       backgroundColor: Colors.lightGreen.shade50,
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text('Home screen', style: TextStyle(
-            color: Colors.white
-        ),),
-        leading: Icon(Icons.home_filled, color: Colors.white,),
+        title: Text(
+          'Home screen',
+          style: TextStyle(color: Colors.white),
+        ),
+        leading: Icon(
+          Icons.home_filled,
+          color: Colors.white,
+        ),
         actions: [
-          IconButton(onPressed: () {
-            // ScaffoldMessenger.of(context).showSnackBar(
-            //   SnackBar(
-            //     content: Text('Money has been transferred'),
-            //     backgroundColor: Colors.green,
-            //     duration: Duration(seconds: 1),
-            //   ),
-            // );
-            showDialog(context: context, builder: (context) {
-              return AlertDialog(
-                title: Text('Send money'),
-                content: Text('Are you sure that you want to send money?'),
-                actions: [
-
-                ],
-              );
-            });
-          }, icon: Icon(Icons.add)),
+          IconButton(
+              onPressed: () {
+                // ScaffoldMessenger.of(context).showSnackBar(
+                //   SnackBar(
+                //     content: Text('Money has been transferred'),
+                //     backgroundColor: Colors.green,
+                //     duration: Duration(seconds: 1),
+                //   ),
+                // );
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('Send money'),
+                        content:
+                            Text('Are you sure that you want to send money?'),
+                        actions: [],
+                      );
+                    });
+              },
+              icon: Icon(Icons.add)),
         ],
       ),
       body: Center(
@@ -63,7 +70,6 @@ class Home extends StatelessWidget {
             Text('World from Rafat'),
             Text('From'),
             Text('Ostad'),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -77,7 +83,8 @@ class Home extends StatelessWidget {
                     Row(
                       children: [
                         Icon(Icons.date_range),
-                        Text('Date'),],
+                        Text('Date'),
+                      ],
                     ),
                     Text('12-12-12'),
                   ],
