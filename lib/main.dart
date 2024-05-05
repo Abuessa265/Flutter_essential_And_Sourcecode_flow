@@ -1,7 +1,13 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +28,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //MediaQuery এর মাধ্যমে ডিভাইস এর স্ক্রিন এর সাইজ,ওয়িথ অরিয়েন্টেশন ইত্যাদি জানা জাই
+    //MediaQuery এর মাধ্যমে ডিভাইস এর screen এর সাইজ,ওয়িথ অরিয়েন্টেশন ইত্যাদি জানা জাই
     print(MediaQuery.of(context).size.width);
     print(MediaQuery.of(context).orientation);
     print(MediaQuery.of(context).devicePixelRatio);
@@ -40,11 +46,13 @@ class Home extends StatelessWidget {
 
       /*
       //wrap এটি row এর মতো কাজ করে কিন্তু row সেম লাইন এ জাইগা শেষ হলে নিচের লাইন থেকে স্টার্ট করতে পারে না কিন্তু wrap এটি পারে
+
+     */
       body: Center(
         child: Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.start,
-          spacing: 10,
+          spacing: 5,
           children: [
             Text(MediaQuery.orientationOf(context).toString()),
             Text(MediaQuery.orientationOf(context).toString()),
@@ -63,7 +71,7 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-       */
+
       /*
       body: LayoutBuilder(
         //LayoutBuilder এর মাধ্যমে একাকটা স্ক্রিন এর জন্য একাকটা ডিজাইন করা জাই
@@ -83,25 +91,25 @@ class Home extends StatelessWidget {
         },
       ),
      */
-      body: OrientationBuilder(
-        builder: (BuildContext context, Orientation orientation) {
-          if (orientation == Orientation.landscape) {
-            //এটা landscape বা ফোন বাকিয়ে ধরলে
-            return Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: Colors.yellow,
-            );
-          } else {
-            return Container(
-              //এটা portrait বা ফোন সোজা ধরলে
-              width: double.infinity,
-              height: double.infinity,
-              color: Colors.red,
-            );
-          }
-        },
-      ),
+      // body: OrientationBuilder(
+      //   builder: (BuildContext context, Orientation orientation) {
+      //     if (orientation == Orientation.landscape) {
+      //       //এটা landscape বা ফোন বাকিয়ে ধরলে
+      //       return Container(
+      //         width: double.infinity,
+      //         height: double.infinity,
+      //         color: Colors.yellow,
+      //       );
+      //     } else {
+      //       return Container(
+      //         //এটা portrait বা ফোন সোজা ধরলে
+      //         width: double.infinity,
+      //         height: double.infinity,
+      //         color: Colors.red,
+      //       );
+      //     }
+      //   },
+      // ),
     );
   }
 }
