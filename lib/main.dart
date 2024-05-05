@@ -69,7 +69,7 @@ class Home extends StatelessWidget {
             height: 400,
             child: FractionallySizedBox(
               heightFactor: 0.8,
-              widthFactor: 0.6,
+              widthFactor: 0.5,
               child: Container(
                 color: Colors.cyan,
               ),
