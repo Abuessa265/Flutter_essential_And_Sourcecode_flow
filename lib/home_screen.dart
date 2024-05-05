@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 // Widget
 class HomeScreen extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() => _HomeScreenState();
 }
@@ -12,7 +11,6 @@ class HomeScreen extends StatefulWidget {
 
 // State class for HomeScreen
 class _HomeScreenState extends State<HomeScreen> {
-
   int counter = 0;
 
   @override
@@ -40,17 +38,16 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Home'),
         leading: const Icon(Icons.home),
-        actions: const [
-          Icon(Icons.add)
-        ],
+        actions: const [Icon(Icons.add)],
       ),
       body: Center(
-        child: Text(counter.toString(), style: const TextStyle(
-            fontSize: 48
-        ),),
+        child: Text(
+          counter.toString(),
+          style: const TextStyle(fontSize: 48),
+        ),
       ),
       floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FloatingActionButton(
             onPressed: () {

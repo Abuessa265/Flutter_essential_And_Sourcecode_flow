@@ -1,8 +1,15 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+
 import 'splash.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,9 +18,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Splash(),
-      theme: ThemeData(),
-    );
+        home: const Splash(),
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          appBarTheme: AppBarTheme(backgroundColor: Colors.green),
+        ));
   }
 }
 
@@ -48,9 +57,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }*/
-
-
-
 
 // Widget - 2 types
 // Stateless Widget
