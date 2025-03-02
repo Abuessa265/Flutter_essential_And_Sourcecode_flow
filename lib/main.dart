@@ -1,9 +1,12 @@
 // Scaffold | Column | Row | Dialog | bottom sheet | Snackbar
 //mainAxisAlignment crossAxisAlignment
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(myApp());
+  runApp(DevicePreview(
+    builder: (context) => myApp(),
+  ));
 }
 
 class myApp extends StatelessWidget {
@@ -46,21 +49,23 @@ class Home extends StatelessWidget {
                 //     duration: Duration(seconds: 1),
                 //   ),
                 // );
+
                 showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: Text('Send money'),
-                        content:
-                            Text('Are you sure that you want to send money?'),
-                        actions: [],
-                      );
-                    });
+                  context: context,
+                  builder: (context) {
+                    return const AlertDialog(
+                      title: Text('Send money'),
+                      content:
+                          Text('Are you sure that you want to send money?'),
+                      actions: [],
+                    );
+                  },
+                );
               },
               icon: Icon(Icons.add)),
         ],
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
